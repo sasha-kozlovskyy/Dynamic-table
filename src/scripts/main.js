@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 'use strict';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com/users';
@@ -28,14 +29,18 @@ function createTable() {
         tr.insertAdjacentHTML(
           'beforeend',
           `
-          <td class='rate'><input value='' type='number' class='rate' id='rate' step='0.01'></td>
+          <td class='rate'>
+            <input value='' type='number' class='rate' id='rate' step='0.01'>
+          </td>
         `
         );
 
         tr.insertAdjacentHTML(
           'beforeend',
           `
-          <td class='koef'><input value='' type='number' class='koef' id='koef' step='0.01'></td>
+          <td class='koef'>
+            <input value='' type='number' class='koef' id='koef' step='0.01'>
+          </td>
         `
         );
 
@@ -69,7 +74,8 @@ function createTable() {
           if (koef.value === '') {
             result.textContent = rate.value * 1;
           } else {
-            result.textContent = Number.parseFloat(rate.value * koef.value).toFixed(2);
+            result.textContent = Number.parseFloat(rate.value * koef.value)
+              .toFixed(2);
           }
         }
 
